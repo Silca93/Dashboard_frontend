@@ -1,0 +1,309 @@
+
+
+.background {
+  background: linear-gradient(to right, #3e196e, #d46c76 , #ffc07c );
+}
+
+
+
+/* rainy cloud */
+/* From Uiverse.io by mrhyddenn */ 
+.loader {
+  position: relative;
+  width: 60px; /* Further reduced width */
+  height: 15px; /* Further reduced height */
+  background: #d9d8d8;
+  border-radius: 100px;
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  top: -10px; /* Adjusted position */
+  left: 3px; /* Adjusted position */
+  width: 15px; /* Further reduced width */
+  height: 15px; /* Further reduced height */
+  background: #d9d8d8;
+  border-radius: 50%;
+  box-shadow: 20px 0 0 5px #d9d8d8; /* Adjusted shadow */
+}
+
+.snow {
+  position: relative;
+  display: flex;
+  z-index: 1;
+}
+
+.snow span {
+  position: relative;
+  width: 3px; /* Further reduced width */
+  height: 5px; /* Further reduced height */
+  background: #40bbfd;
+  margin: 0 1px; /* Adjusted margin */
+  border-radius: 50%;
+  animation: snowing 5s linear infinite;
+  animation-duration: calc(15s / var(--i));
+  transform-origin: bottom;
+}
+
+@keyframes snowing {
+  0% {
+    transform: translateY(0px);
+  }
+
+  70% {
+    transform: translateY(60px) scale(1); /* Adjusted height */
+  }
+
+  100% {
+    transform: translateY(60px) scale(0); /* Adjusted height */
+  }
+}
+
+
+
+
+
+
+.scrollable::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: rgba(rgb(238, 217, 217), rgb(214, 238, 214), rgb(215, 215, 238), 0.1); /* Background of the scrollbar track */
+  border-radius: 10px; /* Round edges of the track */
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: #f2f5a2; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Round edges of the handle */
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: #fdfafa; /* Color when hovering over the handle */
+}
+
+
+
+
+
+/* responsive design */
+
+@media (max-width:1600px) { 
+
+/* top right portion */
+
+  #nasaOuterBorder {
+    width: 35rem;
+  }
+
+  #nasaLeftDiv {
+    width: 16rem;
+  }
+  #nasaRightDiv {
+    width: 12rem;
+  }
+
+
+
+/* bot right portion */
+
+  #newsOuterBorder {
+    width: 30rem;
+    height: 28rem
+  }
+  #newsMidBorder {
+    width: 28rem;
+    height: 26rem
+  }
+  #newsInnerBorder {
+    width: 26rem
+  }
+
+  
+
+  /* top left portion */
+
+
+  /* bot left portion */
+
+  #stockOuterDiv {
+    width : 38rem;
+    /* height: 38rem; */
+  }
+  #stockMidDiv {
+    width:35rem ;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  #stockInnerDiv {
+    width:30rem ;
+    
+  }
+}
+
+
+@media (max-width:1400px) {
+  #nasaOuterBorder {
+    width: 31rem;
+  }
+
+  #nasaLeftDiv {
+    width: 16rem;
+  }
+  #nasaRightDiv {
+    width: 12rem;
+  }
+}
+
+
+@media (max-width:1200px) {
+  
+  #stockOuterDiv {
+    width : 32rem;
+    /* height: 38rem; */
+  }
+  #stockMidDiv {
+    width:30rem ;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  #stockInnerDiv {
+    width:30rem ;
+    
+  }
+
+}
+
+
+@media (max-width:1060px) {
+  
+  #stockOuterDiv {
+    width : 28rem;
+    /* height: 38rem; */
+  }
+  #stockMidDiv {
+    width:26rem ;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  #stockInnerDiv {
+    width:26rem ;
+    
+  }
+
+}
+
+
+
+@media (max-width:1000px) {
+  
+  #stockOuterDiv {
+    width : 28rem;
+    /* height: 38rem; */
+  }
+  #stockMidDiv {
+    width:26rem ;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  #stockInnerDiv {
+    width:26rem ;
+    
+  }
+
+  
+  #nasaOuterBorder {
+    width: 35rem;
+  }
+
+  #nasaLeftDiv {
+    width: 16rem;
+  }
+  #nasaRightDiv {
+    width: 12rem;
+  }
+
+
+
+/* bot right portion */
+
+  #newsOuterBorder {
+    width: 26rem;
+    height: 28rem
+  }
+  #newsMidBorder {
+    width: 24rem;
+    height: 26rem
+  }
+  #newsInnerBorder {
+    width: 22rem
+  }
+  #newsDescription {
+    width: 24rem;
+   justify-content: start;
+    overflow-y: scroll;
+  }
+  
+  #nasaOuterBorder {
+    width: 27rem;
+  }
+
+  #nasaLeftDiv {
+    width: 14rem;
+  }
+  #nasaRightDiv {
+    width: 10rem;
+  }
+
+}
+
+@media (max-width:950px) {
+  #topSection {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    
+    
+  }
+  #weatherDiv {
+    padding-right: 0 !important;
+    justify-content: center;
+    width: 100%;
+    padding-top: 100px;
+  }
+
+  #botSection {
+    padding-top: 30px;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .background {
+      height: auto !important;
+  }
+
+  .botLeft {
+    padding-left: 0rem !important;
+  }
+  .botRight {
+    width: 100% !important;
+   
+    padding-bottom: 20px;
+   
+  }
+  .background {
+
+    background: linear-gradient(to bottom, #3e196e, #d46c76 , #ffc07c );
+  } 
+    
+
+  
+  
+}
+
