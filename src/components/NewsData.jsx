@@ -9,7 +9,7 @@ export default function NewsData() {
         const getNews = async () => {
             try {
                 setLoading(true);
-                const response = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=cae85178adf9412ebd124df5fa615fb9');
+                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${import.meta.env.VITE_API_URL_NEWS}`);
                 
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
