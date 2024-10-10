@@ -5,29 +5,33 @@ export default function NewsData() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+   
     useEffect(() => {
         const getNews = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${import.meta.env.VITE_API_URL_NEWS}`);
+                console.log('Starting news fetch...'); // Debug log
+
+                // Test backend connection first
+                const testResponse = await fetch('/api/test');
+                console.log('Test response:', testResponse.status); // Debug log
+
+                // Fetch news
+                const response = await fetch('/api/news');
+                console.log('News response status:', response.status); // Debug log
                 
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
 
                 const data = await response.json();
+                console.log('Received news data:', data); // Debug log
                 
                 const validArticles = data.articles.filter(article => 
                     article && article.content && article.urlToImage && article.url
                 );
                 setArticle(validArticles);
-
-                console.log(data);
-                // setArticle(data.articles)
-                console.log(validArticles);
            
-                
-
             } catch (error) {
                 console.error('Fetch error:', error);
                 setError(error.message)
@@ -38,6 +42,7 @@ export default function NewsData() {
         getNews();
     }, []);
 
+
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
 
@@ -47,9 +52,9 @@ return (
     <div id='newsOuterBorder' className='w-[40rem] h-[32rem] bg-zinc-100 rounded-xl bg-opacity-55 flex flex-col gap-2 justify-center items-center mb-4'>
         <div id='newsMidBorder' className='w-[36rem] h-[30rem]  flex flex-col gap-2 justify-start items-center overflow-y-scroll overflow-x-hidden scrollable'>
             {displayedArticles.map((item, key) => (
-                <a href={item.url} target="_blank">
+                <a key={key}  href={item.url} target="_blank">
 
-                    <div id='newsInnerBorder' key={key} className='w-[35rem] h-[9rem] bg-black bg-opacity-30 p-2 rounded-xl flex justify-center items-center'>
+                    <div id='newsInnerBorder' className='w-[35rem] h-[9rem] bg-black bg-opacity-30 p-2 rounded-xl flex justify-center items-center'>
                         <div className="flex gap-2 w-full h-[10rem]  justify-center items-center">
                             <div className='left w-[10rem] h-full flex justify-center items-center'>
                                 <img 
