@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import API_BASE_URL from '../api';
+
 
 export default function NewsData() {
     const [article, setArticle] = useState([]);
