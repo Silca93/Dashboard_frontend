@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import API_BASE_URL from '../api';
-
+import NewsLoading from './NewsLoading';
 
 export default function NewsData() {
     const [article, setArticle] = useState([]);
@@ -52,7 +52,7 @@ export default function NewsData() {
     }, []);
 
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <NewsLoading/>
     if (error) return <div>Error: {error}</div>;
 
     const displayedArticles = article.slice(0, 10);
@@ -63,7 +63,7 @@ return (
             {displayedArticles.map((item, key) => (
                 <a key={key}  href={item.url} target="_blank">
 
-                    <div id='newsInnerBorder' className='w-[35rem] h-[9rem] bg-black bg-opacity-30 p-2 rounded-xl flex justify-center items-center'>
+                    <div id='newsInnerBorder' className='w-[35rem] h-[9rem] bg-white bg-opacity-50 p-2 rounded-xl flex justify-center items-center'>
                         <div className="flex gap-2 w-full h-[10rem]  justify-center items-center">
                             <div className='left w-[10rem] h-full flex justify-center items-center'>
                                 <img 
