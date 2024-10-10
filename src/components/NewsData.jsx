@@ -15,11 +15,24 @@ export default function NewsData() {
                 console.log('Starting news fetch...'); // Debug log
 
                 // Test backend connection first
-                const testResponse = await fetch('/api/test');
+                const testResponse = await fetch(
+                    //!for local dev
+                    // '/api/test'
+
+                    //!for production
+                    `${API_BASE_URL}/api/news`
+                );
                 console.log('Test response:', testResponse.status); // Debug log
 
                 // Fetch news
-                const response = await fetch('/api/news');
+                const response = await fetch(
+                    //! for local dev
+                    // '/api/news'
+
+                    //! for produciton 
+                    `${API_BASE_URL}/api/news`
+
+                );
                 console.log('News response status:', response.status); // Debug log
                 
                 if (!response.ok) {
