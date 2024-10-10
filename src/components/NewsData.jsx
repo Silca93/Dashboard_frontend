@@ -16,9 +16,6 @@ export default function NewsData() {
 
                 // Test backend connection first
                 const testResponse = await fetch(
-                    //!for local dev
-                    // '/api/test'
-
                     //!for production
                     `${API_BASE_URL}/api/news`
                 );
@@ -26,10 +23,7 @@ export default function NewsData() {
 
                 // Fetch news
                 const response = await fetch(
-                    //! for local dev
-                    // '/api/news'
-
-                    //! for produciton 
+                     //! for produciton 
                     `${API_BASE_URL}/api/news`
 
                 );

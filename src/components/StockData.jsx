@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import StockLoading from './StockLoading';
+import API_BASE_URL from '../api';
 
 export default function StockData({ symbols }) {
 
@@ -12,7 +13,7 @@ export default function StockData({ symbols }) {
     const fetchStockData = async () => {
       try {
         const stockDataPromises = symbols.map(async (symbol) => {
-          const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/stock/${symbol}`);
+          const response = await axios.get(`${API_BASE_URL}/api/stock/${symbol}`);
           return {
             symbol,
             price: response.data.price.c, // Assuming 'c' is current price
