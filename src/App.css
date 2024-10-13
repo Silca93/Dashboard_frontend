@@ -1,5 +1,9 @@
 
-
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 .background {
   background: linear-gradient(to right, #3e196e, #d46c76 , #ffc07c );
 }
@@ -272,7 +276,9 @@
     padding-right: 0 !important;
     justify-content: center;
     width: 100%;
-    padding-top: 100px;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 20px;
   }
 
   #botSection {
@@ -307,3 +313,50 @@
   
 }
 
+@media (max-width:480px) {
+  
+  #stockOuterDiv {
+    width : 25rem;
+    /* height: 38rem; */
+  }
+  #stockMidDiv {
+    width:24rem ;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  #stockInnerDiv {
+    width:24rem ;
+    
+  }
+
+  
+  #nasaOuterBorder {
+    width: 25rem;
+  }
+
+  #nasaLeftDiv {
+    width: 13rem;
+   
+  }
+  #nasaRightDiv {
+    width: 10rem;
+  }
+
+  #newsOuterBorder {
+    width: 25rem;
+    height: 28rem
+  }
+  #newsMidBorder {
+    width: 23rem;
+    height: 26rem
+  }
+  #newsInnerBorder {
+    width: 22rem
+  }
+  #newsDescription {
+    width: 22rem;
+
+    justify-content: start;
+    overflow-y: scroll;
+  }
+}

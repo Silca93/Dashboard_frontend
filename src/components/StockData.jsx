@@ -55,7 +55,7 @@ export default function StockData({ symbols }) {
             <div className="absolute left-[15rem] flex w-[10rem]  ">
               <h4 className='text-sm text-left font-light'>{symbol}</h4>
             </div>
-            <p className='text-sm font-semibold'>${price}</p>
+            <p className='text-sm font-semibold'>${price.toFixed(2)}</p>
           </div>
         </div>
       ))}

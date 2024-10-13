@@ -78,7 +78,7 @@ function Weather() {
     <div className='background w-dvw h-dvh'>
       <div id="topSection" className='w-full h-[40%] flex'>
         <div id="weatherDiv" className="relative topLeft w-[50%] h-full flex justify-end items-center pr-[6.5rem]">
-          <h1 className='absolute left-6 top-6 font-bold text-3xl text-white max-[950px]:top-2 max-[960px]:left-[18.5rem]'>Dashboard</h1>
+          <h1 className='absolute left-6 top-6 font-bold text-3xl text-white max-[950px]:top-2 max-[950px]:relative max-[950px]:pr-6'>Dashboard</h1>
           {loading ? 
             <WeatherLoading/>
             :
