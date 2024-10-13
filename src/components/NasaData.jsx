@@ -35,11 +35,23 @@ export default function NasaData() {
         <div id='nasaOuterBorder' className="relative flex justify-center items-center gap-3 w-[40rem] h-[19rem] bg-zinc-100 bg-opacity-35 rounded-xl">
         <h1 className='absolute top-2 text-center font-semibold'>NASA PCITURE OF THE DAY</h1>
             <div id='nasaLeftDiv' className="left w-[20rem] h-[15rem] hover:scale-105 duration-300 mt-4 rounded-xl overflow-hidden">
-                <a href={data.hdurl} target="_blank">
-                    
-                    <img src={data.url}   alt="Image description" 
-                    className="w-full h-full object-cover "  />
-                </a>
+            {data.media_type === 'image' ? (
+                        <a href={data.hdurl} target="_blank" rel="noreferrer">
+                            <img
+                                src={data.url}
+                                alt={data.title}
+                                className="w-full h-full object-cover"
+                            />
+                        </a>
+                    ) : data.media_type === 'video' ? (
+                        <iframe
+                            title={data.title}
+                            src={data.url}
+                            frameBorder="0"
+                            allowFullScreen
+                            className="w-full h-full"
+                        ></iframe>
+                    ) : null}
             </div>
             
             <div id='nasaRightDiv' className="scrollable right w-[15rem] h-[15rem] mt-4 bg-opacity-60 bg-zinc-100 rounded-xl overflow-hidden p-3 overflow-y-scroll">
