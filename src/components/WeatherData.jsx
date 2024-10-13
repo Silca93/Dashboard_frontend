@@ -10,9 +10,9 @@ import { FaDroplet } from "react-icons/fa6";
 export default function WeatherData({temperature, precipitation, precipitationChance, time, rain, humidity, wind}) {
     return (
     <div className="relative w-[18rem] h-[12rem] rounded-xl bg-slate-200 bg-opacity-45">
-        <div className="flex items-center justify-between p-2 w-full h-[8rem]  rounded-t-xl ">
+        <div className="flex items-center justify-between p-2 w-full h-[8rem]   rounded-t-xl ">
             <div className="left flex w-1/2 h-full  justify-center items-center">
-                <div className="w-[4rem] h-[3rem]  flex justify-center items-center">
+                <div className="w-[6rem] h-[6rem] overflow-hidden bg-zinc-100 bg-opacity-15 rounded-2xl flex justify-center items-center">
                     {
                     precipitation > 0 ?
                     <div className="rainy-cloud loader">
@@ -42,7 +42,9 @@ export default function WeatherData({temperature, precipitation, precipitationCh
                         </div>
                     </div>
                     :
+                    
                     <FaCloud className='text-[3rem] text-gray-200 overflow-hidden'/>
+                    
                     }
                 </div> 
             </div>

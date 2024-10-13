@@ -6,7 +6,17 @@ export default function NewsData() {
     const [article, setArticle] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [category, setCategory] = useState(null)
 
+
+    const categoryChanger = (cat) => {
+        if (cat === 'all') {
+            setCategory(null);  // Set to null when 'all' is selected
+        } else {
+            setCategory(cat);  // Set category to the selected one
+        }
+    };
+    
    
     useEffect(() => {
         const getNews = async () => {
@@ -21,12 +31,17 @@ export default function NewsData() {
                 );
                 console.log('Test response:', testResponse.status); // Debug log
 
+                const categoryQuery = category ? `?&category=${category}` : '';
                 // Fetch news
+                const url = `${API_BASE_URL}/api/news${categoryQuery}`
+
                 const response = await fetch(
                      //! for produciton 
-                    `${API_BASE_URL}/api/news`
+                    url
 
                 );
+                console.log(url);
+                
                 console.log('News response status:', response.status); // Debug log
                 
                 if (!response.ok) {
@@ -34,6 +49,9 @@ export default function NewsData() {
                 }
 
                 const data = await response.json();
+                console.log(data);
+                
+
                 console.log('Received news data:', data); // Debug log
                 
                 const validArticles = data.articles.filter(article => 
@@ -49,7 +67,7 @@ export default function NewsData() {
             }
         };
         getNews();
-    }, []);
+    }, [category]);
 
 
     if (loading) return <NewsLoading/>
@@ -60,6 +78,16 @@ export default function NewsData() {
 return (
     <div id='newsOuterBorder' className='w-[40rem] h-[32rem] bg-zinc-100 rounded-xl bg-opacity-55 flex flex-col gap-2 justify-center items-center mb-4'>
         <div id='newsMidBorder' className='w-[36rem] h-[30rem]  flex flex-col gap-2 justify-start items-center overflow-y-scroll overflow-x-hidden scrollable'>
+            <div className="flex gap-[3px] justify-center w-full h-auto flex-wrap ">
+                <button className='bg-white rounded-xl text-gray-600 font-semibold  p-1 px-2 text-sm bg-opacity-45' onClick={() => categoryChanger('all')}>All</button>
+                <button className='bg-white rounded-xl text-gray-600 font-semibold px-2  text-sm bg-opacity-45' onClick={() => categoryChanger('science')}>Science</button>
+                <button className='bg-white rounded-xl text-gray-600 font-semibold px-2 text-sm bg-opacity-45' onClick={() => categoryChanger('health')}>Health</button>
+                <button className='bg-white rounded-xl text-gray-600 font-semibold px-2  text-sm bg-opacity-45' onClick={() => categoryChanger('technology')}>Tech</button>
+                <button className='bg-white rounded-xl text-gray-600 font-semibold px-2  text-sm bg-opacity-45' onClick={() => categoryChanger('entertainment')}>Entertainment</button>
+                <button className='bg-white rounded-xl text-gray-600 font-semibold px-2  text-sm bg-opacity-45' onClick={() => categoryChanger('business')}>Business</button>
+                <button className='bg-white rounded-xl text-gray-600 font-semibold px-2  text-sm bg-opacity-45' onClick={() => categoryChanger('sports')}>Sports</button>
+
+            </div>
             {displayedArticles.map((item, key) => (
                 <a key={key}  href={item.url} target="_blank">
 
@@ -88,5 +116,5 @@ return (
             }
         </div>
     </div>
-)
+    )
 }
