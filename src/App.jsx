@@ -104,7 +104,7 @@ function Weather() {
         <div id="weatherDiv" className="relative topLeft w-[50%] h-full flex justify-end items-center pr-[6.5rem]">
           <div className="absolute left-6 top-6 font-bold text-3xl text-white max-[950px]:top-2 max-[950px]:relative max-[950px]:mr-[3rem] flex flex-col w-[14rem] h-[4rem] bg-opacity-25 rounded-lg bg-zinc-200 justify-between items-center">
             <h1 className='text-[1.4rem] font-bold'>Dashboard</h1>
-            <div className="flex w-full h-[2rem] bg-zinc-100 bg-opacity-35 justify-center items-center rounded-b-lg gap-7">
+            <div className="flex w-full h-[1.8rem] bg-zinc-100 bg-opacity-35 justify-center items-center rounded-b-lg gap-7">
               <p className='text-[18px] flex font-medium justify-center items-center gap-2'><FaClock className='text-sm'/>
               {whatTime.slice(0, 2) + ' : ' + whatTime.slice(3, 5)}</p>
               <p className='text-[16px]  font-medium flex justify-center items-center gap-1'><FaCalendarAlt className='text-sm'/>
