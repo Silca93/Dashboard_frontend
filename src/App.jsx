@@ -102,12 +102,20 @@ function Weather() {
     <div className='background w-dvw h-dvh'>
       <div id="topSection" className='w-full h-[40%] flex'>
         <div id="weatherDiv" className="relative topLeft w-[50%] h-full flex justify-end items-center pr-[6.5rem]">
-          <div className="absolute left-6 top-6 font-bold text-3xl text-white max-[950px]:top-2 max-[950px]:relative max-[950px]:mr-[3rem] flex flex-col w-[14rem] h-[4rem] bg-opacity-25 rounded-lg bg-zinc-200 justify-between items-center">
-            <h1 className='text-[1.4rem] font-bold'>Dashboard</h1>
+          <div id='dashboardDiv' className="absolute left-6 top-6 font-bold text-3xl text-white max-[950px]:top-2 max-[950px]:relative max-[950px]:mr-[3rem] flex flex-col w-[14rem] h-[4rem] bg-opacity-25 rounded-md bg-zinc-400">
+            <div className="flex w-full h-[2.2rem]  justify-between items-center px-2">
+              <h1 className='text-[1.3rem] font-bold'>Dashboard</h1>
+              <div className="flex gap-1 w-[5rem] h-[1.6rem] rounded-md bg-zinc-100 justify-center items-center bg-opacity-30">
+
+                  <FaClock className='text-sm'/>
+                <p className='text-[18px] font-medium'>
+                  {whatTime.slice(0, 2) + ' : ' + whatTime.slice(3, 5)}
+                </p>
+              </div>
+            </div>
             <div className="flex w-full h-[1.8rem] bg-zinc-100 bg-opacity-35 justify-center items-center rounded-b-lg gap-7">
-              <p className='text-[18px] flex font-medium justify-center items-center gap-2'><FaClock className='text-sm'/>
-              {whatTime.slice(0, 2) + ' : ' + whatTime.slice(3, 5)}</p>
-              <p className='text-[16px]  font-medium flex justify-center items-center gap-1'><FaCalendarAlt className='text-sm'/>
+              
+              <p className='text-[18px]  font-thin flex justify-center items-center gap-1'><FaCalendarAlt className='text-sm'/>
               {date}</p>
             </div>
 
