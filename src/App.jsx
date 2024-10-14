@@ -102,7 +102,7 @@ function Weather() {
     <div className='background w-dvw h-dvh'>
       <div id="topSection" className='w-full h-[40%] flex'>
         <div id="weatherDiv" className="relative topLeft w-[50%] h-full flex justify-end items-center pr-[6.5rem]">
-          <div className="absolute left-6 top-6 font-bold text-3xl text-white max-[950px]:top-2 max-[950px]:relative max-[950px]:pr-6 flex flex-col w-[14rem] h-[4rem] bg-opacity-25 rounded-lg bg-zinc-200 justify-between items-center">
+          <div className="absolute left-6 top-6 font-bold text-3xl text-white max-[950px]:top-2 max-[950px]:relative max-[950px]:mr-[3rem] flex flex-col w-[14rem] h-[4rem] bg-opacity-25 rounded-lg bg-zinc-200 justify-between items-center">
             <h1 className='text-[1.4rem] font-bold'>Dashboard</h1>
             <div className="flex w-full h-[2rem] bg-zinc-100 bg-opacity-35 justify-center items-center rounded-b-lg gap-7">
               <p className='text-[18px] flex font-medium justify-center items-center gap-2'><FaClock className='text-sm'/>

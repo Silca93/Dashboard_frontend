@@ -316,42 +316,42 @@ body {
 @media (max-width:480px) {
   
   #stockOuterDiv {
-    width : 25rem;
+    width : 23rem;
     /* height: 38rem; */
   }
   #stockMidDiv {
-    width:24rem ;
+    width:22rem ;
     margin-bottom: 10px;
     margin-top: 10px;
   }
   #stockInnerDiv {
-    width:24rem ;
+    width:22rem ;
     
   }
 
   
   #nasaOuterBorder {
-    width: 25rem;
+    width: 23rem;
   }
 
   #nasaLeftDiv {
-    width: 13rem;
+    width: 12rem;
    
   }
   #nasaRightDiv {
-    width: 10rem;
+    width: 9rem;
   }
 
   #newsOuterBorder {
-    width: 25rem;
+    width: 23rem;
     height: 28rem
   }
   #newsMidBorder {
-    width: 23rem;
+    width: 21rem;
     height: 26rem
   }
   #newsInnerBorder {
-    width: 22rem
+    width: 19rem
   }
   #newsDescription {
     width: 22rem;
