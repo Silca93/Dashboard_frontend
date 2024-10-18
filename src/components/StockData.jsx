@@ -40,7 +40,7 @@ export default function StockData({ symbols }) {
 
 
   return (
-    <div id='stockOuterDiv' className="w-[43rem] h-[32rem] flex flex-col bg-zinc-100 rounded-xl justify-center items-center bg-opacity-30">
+    <div id='' className="stockOuterDiv w-[43rem] h-[32rem] flex flex-col bg-zinc-100 rounded-xl justify-center items-center bg-opacity-30">
 
       <div id='stockMidDiv' className="w-[40rem] h-[30rem] flex flex-col bg-zinc-100 rounded-xl bg-opacity-70 justify-center items-center">
       {stocks.map(({ symbol, price, companyProfile }) => (

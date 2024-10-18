@@ -138,11 +138,16 @@ body {
 
   /* bot left portion */
 
-  #stockOuterDiv {
-    width : 38rem;
+  .stockOuterDiv {
+    width : 38rem !important;
     /* height: 38rem; */
   }
   #stockMidDiv {
+    width:35rem ;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  #stockMidDivLoading {
     width:35rem ;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -170,11 +175,19 @@ body {
 
 @media (max-width:1200px) {
   
-  #stockOuterDiv {
-    width : 32rem;
+  .stockOuterDiv {
+    width : 32rem !important;
     /* height: 38rem; */
   }
+  .stockLoading {
+    width: 30rem;
+  }
   #stockMidDiv {
+    width:30rem ;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  #stockMidDivLoading {
     width:30rem ;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -189,14 +202,20 @@ body {
 
 @media (max-width:1060px) {
   
-  #stockOuterDiv {
-    width : 28rem;
+  .stockOuterDiv {
+    width : 28rem !important;
     /* height: 38rem; */
   }
   #stockMidDiv {
     width:26rem ;
     margin-bottom: 10px;
     margin-top: 10px;
+  }
+  #stockMidDivLoading {
+
+    width:26rem ;
+     margin-bottom: 10px;
+     margin-top: 10px;
   }
   #stockInnerDiv {
     width:26rem ;
@@ -209,8 +228,8 @@ body {
 
 @media (max-width:1000px) {
   
-  #stockOuterDiv {
-    width : 28rem;
+  .stockOuterDiv {
+    width : 28rem !important;
     /* height: 38rem; */
   }
   #stockMidDiv {
@@ -218,6 +237,12 @@ body {
     margin-bottom: 10px;
     margin-top: 10px;
   }
+  #stockMidDivLoading {
+    width:26rem ;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
   #stockInnerDiv {
     width:26rem ;
     
@@ -322,11 +347,16 @@ body {
 
 @media (max-width:480px) {
   
-  #stockOuterDiv {
-    width : 23rem;
+  .stockOuterDiv {
+    width : 23rem !important;
     /* height: 38rem; */
   }
   #stockMidDiv {
+    width:22rem ;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  #stockMidDivLoading {
     width:22rem ;
     margin-bottom: 10px;
     margin-top: 10px;
