@@ -28,6 +28,8 @@ export default function WeatherData({temperature, precipitation, precipitationCh
 
         }
     };
+
+    
     
 
     return (

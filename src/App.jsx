@@ -10,6 +10,11 @@ import { FaCalendarAlt } from "react-icons/fa";
 
 function Weather() {
   const [time, setTime] = useState(null);
+  const [timeFormat, setTimeFormat] = useState(false);
+  const [whatTime, setWhatTime] = useState('');
+  const [date, setDate] = useState('');
+  const [pmTime, setPMTime] = useState('')
+  
   const [temperature, setTemperature] = useState(null);
   const [precipitationChance, setPrecipitationChance] = useState(null);
   const [precipitation, setPrecipitation] = useState(null);
@@ -17,10 +22,8 @@ function Weather() {
   const [humidity, setHumidity] = useState(0);
   const [wind, setWind] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [whatTime, setWhatTime] = useState('');
-  const [date, setDate] = useState('');
-  const [pmTime, setPMTime] = useState('');
-  const [timeFormat, setTimeFormat] = useState(false);
+ ;
+
 
   const stockSymbols = [
     "AAPL", "GOOGL", "TSLA", "MSFT", 
@@ -81,11 +84,14 @@ function Weather() {
       const date = theTime.toLocaleDateString();
       const localTime = theTime.toLocaleTimeString([], { hour12: false });
       const pmTime = theTime.toLocaleTimeString([], { hour12: true });
+      
 
       setWhatTime(localTime);
       setPMTime(pmTime);
       setDate(date);
     };
+    console.log(pmTime);
+    
 
     updateTime(); // Update immediately on mount
     const intervalId = setInterval(updateTime, 1000); // Update every second
@@ -100,10 +106,10 @@ function Weather() {
           <div id='dashboardDiv' className="absolute left-6 top-6 font-bold text-3xl text-white max-[950px]:top-2 max-[950px]:relative max-[950px]:mr-[3rem] flex flex-col w-[15rem] h-[4rem] bg-opacity-25 rounded-md bg-zinc-400">
             <div className="flex w-full h-[2.2rem] justify-between items-center gap-2 px-2">
               <h1 className='text-[1.3rem] font-bold'>Dashboard</h1>
-              <div className="flex gap-1 w-[5rem] h-[1.6rem] rounded-md bg-zinc-100 justify-center items-center bg-opacity-30">
+              <div className="flex gap-1 w-[5.3rem] h-[1.6rem] rounded-md bg-zinc-100 justify-center items-center bg-opacity-30">
                 <FaClock className='text-sm'/>
-                <p className='text-[18px] font-medium'>
-                  {timeFormat ? whatTime.slice(0, 2) + ' : ' + whatTime.slice(3, 5) : pmTime.slice(0, 1) + ' : ' + pmTime.slice(2, 4) }
+                <p className='text-[17px] font-medium'>
+                  {timeFormat ? whatTime.slice(0, 2) + ' : ' + whatTime.slice(3, 5) : pmTime.length === 5 ?  pmTime.slice(0, 2) + ' : ' + pmTime.slice(3, 5) : pmTime.slice(0,1) + ' : '  + pmTime.slice(2,4)}
                 </p>
               </div>
               <div className="flex w-[1.9rem] h-[1.6rem] rounded-md bg-green-400 justify-center items-center bg-opacity-50 hover:border-[1px] duration-200 ease-linear hover:border-white">
